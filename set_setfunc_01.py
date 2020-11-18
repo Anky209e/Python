@@ -1,0 +1,11 @@
+l = [1,2,3,4,5,6,7]
+s = set(l)
+print(s)
+s.add(9)
+print(s)
+s1 = s.intersection({1,4,6})
+print(s1)
+print(max(s))
+print(s.isdisjoint(s1))
+print(s.issubset(s1))
+print(s1.issuperset(s))
