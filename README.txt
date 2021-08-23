@@ -1,9 +1,4 @@
-# Python
- This is my python repositry with basic programms
- it includes whole programms from basic to advanced
- you can learn python basic in this
-user input ans string slicing is also explained
-many dictionary and list function are also added
-some small projects are also added for pratice
-project files have prefix pro_example.py in front of them
-Thanks!
+Python
+Python is an interpreted high-level general-purpose programming language. 
+Its design philosophy emphasizes code readability with its use of significant indentation. 
+Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.
