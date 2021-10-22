@@ -6,6 +6,7 @@ class Queue:
     def __init__(self):
         self.head = None
         self.tail = None
+    # function for checking is it is empty
     def isEmpty(self):
         return self.head == None
     
