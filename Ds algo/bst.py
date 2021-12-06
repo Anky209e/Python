@@ -56,7 +56,7 @@ class BST:
         if data > self.data:
             self.right = self.right.remove(data)
             return self
-        
+        #checking for leafs
         if self.left is None and self.right is None:
             return None
 
@@ -70,7 +70,7 @@ class BST:
             return temp
         parent = self
         child = self.right
-
+    
         while child.left != None:
             parent = child
             child = child.left
