@@ -66,7 +66,7 @@ class MinHeap:
     
     #removing and returning smallest
     def remove(self):
-        delt = self.arrHeap[self.min]
+        delt = self.arrHeap[self.min] 
         self.arrHeap[self.min] = self.arrHeap[self.size]
         self.size-=1
         self.Heapify(self.min)
