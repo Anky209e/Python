@@ -9,21 +9,17 @@ def maxProfit(prices):
     max_profit = 0
 
     while right_pointer < len(prices):
-
         if prices[left_pointer] < prices[right_pointer]:
             profit = prices[right_pointer]-prices[left_pointer]
             max_profit = max(max_profit,profit)
         else:
             left_pointer = right_pointer
-        
         right_pointer += 1
-
     return max_profit
 
 def maxProfit_2(prices) -> int:
         min_price = prices[0]
         max_profit = 0
-
         for price in prices:
             if price < min_price:
                 min_price = price
