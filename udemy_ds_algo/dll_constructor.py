@@ -3,7 +3,7 @@ class Node:
         self.value = value
         self.next = None
         self.prev = None
-# COmment 
+# Creating DoublyLinkedList 
 class DoublyLinkedList:
     def __init__(self,value):
         new_node = Node(value)
@@ -39,6 +39,19 @@ class DoublyLinkedList:
         
         return temp
     
+    def prepend(self,value):
+        """Prepends a node"""
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+        self.length += 1
+        return True
+
     def print_list(self):
         temp = self.head
         while temp is not None:
@@ -49,6 +62,6 @@ class DoublyLinkedList:
 list1 = DoublyLinkedList(7)
 list1.append(8)
 list1.append(10)
-list1.pop()
+list1.prepend(12)
 
 list1.print_list()
