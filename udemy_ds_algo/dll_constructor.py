@@ -75,8 +75,6 @@ class DoublyLinkedList:
         self.head.prev = None
         return temp
 
-    # TODO: Add get method for DoublyLinkedList
-
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -93,12 +91,57 @@ class DoublyLinkedList:
                 temp = temp.prev
             return temp
 
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
+    def insert(self, index, value):
+        """Inserts a element in DLL"""
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            self.prepend(value)
+        if index == self.length:
+            self.append(value)
+        Before = self.get(index - 1)
+        After = Before.next
+        new_node = Node(value)
+        new_node.prev = Before
+        new_node.next = After
+        Before.next = new_node
+        After.prev = new_node
+        self.length += 1
+        return True
+
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return False
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        temp = self.get(index - 1)
+        current = temp.next
+        temp.next = current.next
+        current.next.prev = temp
+        current.next = None
+        current.prev = None
+        self.length -= 1
+        return True
+
 
 list1 = DoublyLinkedList(7)
 list1.append(8)
 list1.append(10)
 list1.append(12)
 # print(list1.pop_first().value)
-print(list1.get(1).value)
-print(list1.get(3).value)
-# list1.print_list()
+# print(list1.get(1).value)
+# print(list1.get(3).value)
+print("Before")
+list1.print_list()
+print("After")
+list1.remove(2)
+list1.print_list()
