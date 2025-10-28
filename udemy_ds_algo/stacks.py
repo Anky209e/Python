@@ -38,6 +38,16 @@ class Stack:
             print(temp.value)
             temp = temp.next
 
+    def peek(self):
+        if self.length == 0:
+            return None
+        return self.top
+
+    def is_empty(self):
+        if self.length == 0:
+            return True
+        return False
+
 
 if __name__ == "__main__":
     Stack1 = Stack(0)
